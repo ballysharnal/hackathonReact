@@ -7,7 +7,6 @@ class Login extends Component {
 
     state = {
         urlLogin: 'http://localhost:4242/users/login',
-        urlProtected: 'http://localhost:4242/users/protected',
         pseudo:'',
         password:'',
         redirect: false
@@ -20,19 +19,18 @@ class Login extends Component {
 
     protectedRoute = () => {
         const token = localStorage.getItem("token");
-        axios.post(
-            this.state.urlProtected,
-            {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            }
-        ).then( res => {
+        axios({
+            method: 'POST',
+            url: "http://localhost:4242/users/protected", 
+            headers: {
+               'Authorization': `Bearer ${token}`,
+             },
+            }).then( res => {
             // redirection
             this.setState({redirect: true})
         })
     }
-
+    
     getForm = e => {
         e.preventDefault();
         axios.post(
@@ -41,13 +39,11 @@ class Login extends Component {
                 pseudo: this.state.pseudo,
                 password: this.state.password
             }
-        ).then( res => {
+            ).then( res => {
                 localStorage.setItem("token", res.headers["x-access-token"]);
-            }
-        )
-        this.protectedRoute();
-
-    }
+                this.protectedRoute();
+            })
+        }
 
     render() {
         const redirect = this.state.redirect
