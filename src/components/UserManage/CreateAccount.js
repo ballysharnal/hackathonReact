@@ -120,6 +120,7 @@ class CreateAccount extends Component {
                             name="confirmPassword" 
                             placeholder="Confirm password"
                             value={this.state.confirmPassword}
+                            onChange={this.handleChange}
                         />
                         {
                             this.state.validatorConfirmPassword == false ? 
@@ -136,7 +137,7 @@ class CreateAccount extends Component {
                             name="avatar"
                             type="text"
                             value={this.state.avatar}
-                            validators={['matchRegexp:^\.(gif|jpg|jpeg|tiff|png)']}
+                            validators={['required','matchRegexp:^.{0,}\.(gif|jpg|jpeg|tiff|png)']}
                             errorMessages={['Only png, jpg, jpeg']}
                         />
                     </label>
