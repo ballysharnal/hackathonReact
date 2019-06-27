@@ -18,7 +18,8 @@ class CreateAccount extends Component {
         email: '',
         password: '',
         confirmPassword: '',
-        avatar: ''
+        avatar: '',
+        regExAvatarUrl: "(http(s?):).+[\.](?:jpg|gif|png|jpeg)"
     }
 
     onSubmit = e => {
@@ -120,6 +121,7 @@ class CreateAccount extends Component {
                             name="confirmPassword" 
                             placeholder="Confirm password"
                             value={this.state.confirmPassword}
+                            onChange={this.handleChange}
                         />
                         {
                             this.state.validatorConfirmPassword == false ? 
@@ -132,11 +134,12 @@ class CreateAccount extends Component {
                     <label>
                         Avatar
                         <TextValidator
+                            
                             onChange={this.handleChange}
                             name="avatar"
                             type="text"
                             value={this.state.avatar}
-                            validators={['matchRegexp:^\.(gif|jpg|jpeg|tiff|png)']}
+                            validators={["matchRegexp:" + this.state.regExAvatarUrl]}
                             errorMessages={['Only png, jpg, jpeg']}
                         />
                     </label>
