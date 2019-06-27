@@ -3,7 +3,7 @@ import axios from 'axios'
 import './CreateAccount.css'
 import { ValidatorForm } from 'react-form-validator-core'
 import TextValidator from './TextValidator'
-import confirm from 'react'
+import { Redirect } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +18,8 @@ class CreateAccount extends Component {
         email: '',
         password: '',
         confirmPassword: '',
-        avatar: ''
+        avatar: '',
+        regExAvatarUrl: "(http(s?):).+[\.](?:jpg|gif|png|jpeg)"
     }
 
     onSubmit = e => {
@@ -35,7 +36,9 @@ class CreateAccount extends Component {
                         avatar: e.target.avatar.value,
                         UserBase_id: 1
                     }
-                    );
+                ).then( () => {
+                        return <Redirect to='/Login' />
+                    });
                     this.setState({
                         pseudo: '',
                         email:'',
@@ -137,7 +140,7 @@ class CreateAccount extends Component {
                             name="avatar"
                             type="text"
                             value={this.state.avatar}
-                            validators={['required','matchRegexp:^.{0,}\.(gif|jpg|jpeg|tiff|png)']}
+                            validators={["matchRegexp:" + this.state.regExAvatarUrl]}
                             errorMessages={['Only png, jpg, jpeg']}
                         />
                     </label>
