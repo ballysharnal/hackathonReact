@@ -9,7 +9,8 @@ class Login extends Component {
         urlLogin: 'http://localhost:4242/users/login',
         urlProtected: 'http://localhost:4242/users/protected',
         pseudo:'',
-        email:''
+        password:'',
+        redirect: false
     };
 
     handleChange = e => {
@@ -28,8 +29,7 @@ class Login extends Component {
             }
         ).then( res => {
             // redirection
-            console.log('Julia')
-            return <Redirect to='/Game' />
+            this.setState({redirect: true})
         })
     }
 
@@ -39,7 +39,7 @@ class Login extends Component {
             this.state.urlLogin, 
             {
                 pseudo: this.state.pseudo,
-                email: this.state.email
+                password: this.state.password
             }
         ).then( res => {
                 localStorage.setItem("token", res.headers["x-access-token"]);
@@ -50,6 +50,11 @@ class Login extends Component {
     }
 
     render() {
+        const redirect = this.state.redirect
+        if (redirect) {
+            return <Redirect to='/Game' />
+        }
+
         return (
             <div className="cont">
                 <h2>LOGIN</h2>
@@ -65,13 +70,13 @@ class Login extends Component {
                         />
                     </label>
                     <label>
-                        Email
+                        Mot de passe
                         <input 
                             onChange={this.handleChange}
-                            name="email" 
+                            name="password" 
                             type="text" 
-                            placeholder="Enter your email"
-                            value={this.state.email}
+                            placeholder="Enter your password"
+                            value={this.state.password}
                         />
                     </label>
                     <button onClick={this.getForm}>VALIDER</button>

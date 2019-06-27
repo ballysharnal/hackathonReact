@@ -19,7 +19,8 @@ class CreateAccount extends Component {
         password: '',
         confirmPassword: '',
         avatar: '',
-        regExAvatarUrl: "(http(s?):).+[\.](?:jpg|gif|png|jpeg)"
+        regExAvatarUrl: "(http(s?):).+[\.](?:jpg|gif|png|jpeg)",
+        redirect: false
     }
 
     onSubmit = e => {
@@ -36,9 +37,9 @@ class CreateAccount extends Component {
                         avatar: e.target.avatar.value,
                         UserBase_id: 1
                     }
-                ).then( () => {
-                        return <Redirect to='/Login' />
-                    });
+                ).then(() => {
+                    this.setState({ redirect: true });
+                });
                     this.setState({
                         pseudo: '',
                         email:'',
@@ -47,6 +48,7 @@ class CreateAccount extends Component {
                         avatar:'',
                     }
                 )
+                
             }
         } else {
             this.setState({validatorConfirmPassword: false});
@@ -66,6 +68,10 @@ class CreateAccount extends Component {
     }
 
     render() {
+        const redirect = this.state.redirect;
+            if (redirect) {
+                return <Redirect to='/Login'/>;
+            }
         return (
             <div className="createAccountClass">
                 <h1>ATLANT'ATTACK</h1>
