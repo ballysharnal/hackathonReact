@@ -1,0 +1,28 @@
+.column {
+    border: 1px solid white;
+    width: 9%;
+    height: 9%;
+    display: inline-block;
+    text-align: center;
+    transition: transform .2s;
+}
+.column:hover {
+    background: rgba(255, 255, 255, .7);
+    border: 2px solid white;
+    transform: scale(1.25);
+}
+
+.villagePosition {
+    border: 2px black solid;
+}
+
+.row {
+    color: white;
+    width: 450px;
+    height: 450px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: calc(50% - 202.5px);
+    left: calc(50% - 202.5px);
+}

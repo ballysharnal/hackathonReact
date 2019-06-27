@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import Login from './components/UserManage/Login';
 import CreateAccount from './components/UserManage/CreateAccount';
 import Footer from './components/Footer';
+import Mapp from './components/UserManage/Mapp';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Router>
           <Route path="/" exact component={HomePage} />
           <Route path="/Login" component={Login} />
+          <Route path="/Mapp" component={Mapp} />
           <Route path="/Game" component={Game} />
           <Route path="/CreateAccount" component={CreateAccount} />
         <Footer />
