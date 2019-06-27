@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from './components/UserManage/Login';
+
 import Game from './pages/Game';
+import HomePage from './pages/HomePage';
+
+import Login from './components/UserManage/Login';
 import CreateAccount from './components/UserManage/CreateAccount';
+import Footer from './components/Footer';
 
 function App() {
   return (
