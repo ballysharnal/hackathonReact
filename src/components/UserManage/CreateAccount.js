@@ -3,6 +3,7 @@ import axios from 'axios'
 import './CreateAccount.css'
 import { ValidatorForm } from 'react-form-validator-core'
 import TextValidator from './TextValidator'
+import { Redirect } from 'react-router-dom';
 import confirm from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -36,7 +37,9 @@ class CreateAccount extends Component {
                         avatar: e.target.avatar.value,
                         UserBase_id: 1
                     }
-                    );
+                ).then( () => {
+                        return <Redirect to='/Login' />
+                    });
                     this.setState({
                         pseudo: '',
                         email:'',
