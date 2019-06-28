@@ -7,10 +7,10 @@ export class Navbar extends Component {
         return (
             <div className="NavbarClass">
                 <ul className="ulNavbar">
-                    <li><Link className="link" to={"/Mapp"}>Wordl's Map</Link></li>
-                    <li><Link className="link" to={"/Buildings"}>Your buildings</Link></li>
-                    <li><Link className="link" to={"/BuySoldier"}>Your soldiers</Link></li>
-                    <li><Link className="link" to={"/Base"}>Your base</Link></li>
+                    <li><Link className="link" to={"/Game/Mapp"}>Wordl's Map</Link></li>
+                    <li><Link className="link" to={"/Game/Buildings"}>Your buildings</Link></li>
+                    <li><Link className="link" to={"/Game/BuySoldier"}>Your soldiers</Link></li>
+                    <li><Link className="link" to={"/Game/Base"}>Your base</Link></li>
                 </ul>
             </div>
         )
