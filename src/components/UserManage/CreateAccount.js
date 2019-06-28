@@ -19,6 +19,8 @@ class CreateAccount extends Component {
         password: '',
         confirmPassword: '',
         avatar: '',
+        money: '',
+        creationBirthday: '',
         regExAvatarUrl: "(http(s?):).+[\.](?:jpg|gif|png|jpeg)",
         redirect: false
     }
@@ -35,7 +37,9 @@ class CreateAccount extends Component {
                         password: e.target.password.value,
                         forgetPassword: "null",
                         avatar: e.target.avatar.value,
-                        UserBase_id: 1
+                        money: 1000,
+                        creationBirthday: '1991-10-24',
+                        UserBase_id: 1,
                     }
                 ).then(() => {
                     this.setState({ redirect: true });
