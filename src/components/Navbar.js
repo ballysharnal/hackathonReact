@@ -9,7 +9,7 @@ export class Navbar extends Component {
                 <ul className="ulNavbar">
                     <li><Link className="link" to={"/Mapp"}>Wordl's Map</Link></li>
                     <li><Link className="link" to={"/Buildings"}>Your buildings</Link></li>
-                    <li><Link className="link" to={"/Soldiers"}>Your soldiers</Link></li>
+                    <li><Link className="link" to={"/BuySoldier"}>Your soldiers</Link></li>
                     <li><Link className="link" to={"/Base"}>Your base</Link></li>
                 </ul>
             </div>
