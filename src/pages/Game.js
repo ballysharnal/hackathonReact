@@ -14,7 +14,6 @@ class Game extends Component {
                 <Navbar className="navbar"/>
                 <Mapp />
                 <Footer />
-                <BuySoldier />
             </div>
         )
     }
