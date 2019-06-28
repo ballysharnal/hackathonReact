@@ -7,7 +7,6 @@ import HomePage from './pages/HomePage';
 
 import Login from './components/UserManage/Login';
 import CreateAccount from './components/UserManage/CreateAccount';
-import Footer from './components/Footer';
 import Mapp from './components/UserManage/Mapp';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
           <Route path="/Mapp" component={Mapp} />
           <Route path="/Game" component={Game} />
           <Route path="/CreateAccount" component={CreateAccount} />
-        <Footer />
       </Router>
     </div>
   );

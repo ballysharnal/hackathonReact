@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import  './Mapp.css'
-import Navbar from '../Navbar';
 
 class Mapp extends Component {
 
@@ -12,11 +11,10 @@ class Mapp extends Component {
     
     render() {
         return (
-            <div>
-                <Navbar />
+            <div className="MapClass">
                 <ul className="row">
                     {
-                        this.state.tab.map(el => <li className="column" value={el+1} key={el+1}> {el+1} </li>)
+                        this.state.tab.map(el => <li className="column" value={el+1} key={el+1}></li>)
                         }
                 </ul>
             </div>

@@ -4,12 +4,15 @@
     height: 9%;
     display: inline-block;
     text-align: center;
-    transition: transform .2s;
+    margin-bottom: -5px;
 }
-.column:hover {
-    background: rgba(255, 255, 255, .7);
-    border: 2px solid white;
-    transform: scale(1.25);
+
+.MapClass {
+    background: url('../../assets/bg.jpg') no-repeat center fixed;
+    background-size: cover;
+    display: inline-block;
+    height: 100vh;
+    width: 88%;
 }
 
 .villagePosition {
@@ -18,11 +21,11 @@
 
 .row {
     color: white;
-    width: 450px;
-    height: 450px;
+    width: 610px;
+    height: 610px;
     margin: 0;
     padding: 0;
-    position: fixed;
-    top: calc(50% - 202.5px);
-    left: calc(50% - 202.5px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
 }
