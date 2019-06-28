@@ -4,13 +4,17 @@
     height: 9%;
     display: inline-block;
     text-align: center;
-    margin-bottom: -5px;
+    vertical-align: top;
 }
 
 .MapClass {
     background: url('../../assets/bg.jpg') no-repeat center fixed;
     background-size: cover;
     height: 100vh;
+}
+
+.villageImg {
+    width: 100%;
 }
 
 .villagePosition {

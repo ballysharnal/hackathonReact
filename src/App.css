@@ -2,7 +2,7 @@
   text-align: center;
   background: url('./assets/platon.jpg') no-repeat center fixed;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }
 
