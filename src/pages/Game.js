@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Mapp from '../components/UserManage/Mapp';
 import './Game.css';
 import Topbar from '../components/UserManage/Topbar';
+import BuySoldier from '../components/BuySoldier';
 
 class Game extends Component {
     render() {
@@ -13,6 +14,7 @@ class Game extends Component {
                 <Navbar className="navbar"/>
                 <Mapp />
                 <Footer />
+                <BuySoldier />
             </div>
         )
     }
