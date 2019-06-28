@@ -1,0 +1,25 @@
+.link {
+    color: white;
+    list-style-type: none;
+}
+
+ul {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.NavbarClass {
+    display: inline-block;
+    background: blue;
+    width: 12%;
+    height: 100vh;
+    vertical-align: top;
+}
+
+.ulNavbar {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
