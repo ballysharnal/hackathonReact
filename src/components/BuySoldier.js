@@ -31,7 +31,7 @@ class BuySoldier extends Component {
                 soldatName: res.data[0].soldatName,
                 soldatPrice: res.data[0].soldatPrice,
                 soldatDescription: res.data[0].soldatDescription,
-                soldatImage: res.data.soldatImage,
+                soldatImage: 'https://previews.123rf.com/images/popaukropa/popaukropa1801/popaukropa180100283/93263717-tank-man-emoji-en-col%C3%A8re-soldat-russe-%C3%A9motion-mal-avatar-tank-man-militaire-en-russie-agressif-illustrat.jpg',
                 soldatAttack: res.data[0].soldatAttack,
                 soldatDefense: res.data[0].soldatDefense,
                 soldatInitiative: res.data[0].soldatInitiative
@@ -50,7 +50,6 @@ class BuySoldier extends Component {
                 userId: res.data[0].id,
                 userMoney: res.data[0].userMoney
             })
-            console.log(this.state.userId)
         }).catch(error => {
             console.log(error);
         })
@@ -112,22 +111,24 @@ class BuySoldier extends Component {
 
         return (
             <div className="main">
-                <h3>{this.state.soldatName}</h3>
-                <img src={this.state.soldatImage} alt='Ryan' />
-                <p>{this.state.soldatDescription}</p>
-                <p>{this.state.soldatPrice}</p>
-                <p>{this.state.soldatAttackw}</p>
-                <p>{this.state.soldatDefense}</p>
-                <p>{'Initiative : ' + this.state.soldatInitiative}</p>
-                <p>{'Your money : ' + this.state.userMoney}</p>
-                <label>
-                    Nombre de soldats souhaité :
-                    <button onClick={this.quantitySoldiers} type='button'>-</button>
-                    <input type='number' value={this.state.soldierQuantity}/>
-                    <button type='button' onClick={this.quantitySoldiers}>+</button>
-                </label>
-                <p>{this.state.priceToPay}</p>
-                <button type='button' onClick={this.confirmSoldierBuying}>ACHETER</button>
+                <div className="store">
+                    <h3>{'Soldier type : ' + this.state.soldatName}</h3>
+                    <img src={this.state.soldatImage} alt='Ryan' />
+                    <p>{'Description : ' + this.state.soldatDescription}</p>
+                    <p>{'Price : ' + this.state.soldatPrice}</p>
+                    <p>{'Attack power : ' + this.state.soldatAttack}</p>
+                    <p>{'Defence power : ' + this.state.soldatDefense}</p>
+                    <p>{'Initiative : ' + this.state.soldatInitiative}</p>
+                    <p>{'Your money : ' + this.state.userMoney}</p>
+                    <label>
+                        <p>Number of soldiers wanted :</p>
+                        <button className="QtyBtn" onClick={this.quantitySoldiers} type='button'>-</button>
+                        <input type='number' value={this.state.soldierQuantity}/>
+                        <button className="QtyBtn" type='button' onClick={this.quantitySoldiers}>+</button>
+                    </label>
+                    <p>{'Price to pay : ' + this.state.priceToPay}</p>
+                    <button id="buyButton" type='button' onClick={this.confirmSoldierBuying}>ACHETER</button>
+                </div>
             </div>
         )
     }
